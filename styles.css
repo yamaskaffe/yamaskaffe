@@ -1,0 +1,892 @@
+/* Återställ CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body
+{
+    overflow-x: hidden;
+}
+
+/* Basstil för hela sidan */
+body {
+    font-family: Avenir Next, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/*Navbar*/
+nav{
+
+  width: 100%;
+ 
+  height: 70px;
+  background: #fff;
+  color: black;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+nav .navbar{
+ 
+ 
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding: 0 50px;
+}
+.navbar .logo a{
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav .navbar .nav-links{
+  line-height: 70px;
+  height: 100%;
+}
+nav .navbar .links{
+  display: flex;
+}
+nav .navbar .links li{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0 14px;
+}
+nav .navbar .links li a{
+  height: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  color: black;
+  font-size: 11px;
+  font-weight: 500;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+  transform: rotate(180deg);
+}
+
+.sticky {
+  
+     background: rgb(255, 255, 255 , 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  right: 0;
+  z-index: 10;
+}
+.sticky:hover{
+    background-color: white;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+nav .navbar .links li .arrow{
+  /* background: red; */
+  height: 100%;
+  width: 22px;
+  line-height: 70px;
+  text-align: center;
+  display: inline-block;
+  color: black;
+  transition: all 0.3s ease;
+}
+nav .navbar .links li .sub-menu{
+  position: absolute;
+  top: 70px;
+  left: 0;
+  line-height: 40px;
+  background: rgb(0, 0, 0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  display: none;
+  z-index: 2;
+}
+nav .navbar .links li:hover .htmlCss-sub-menu,
+nav .navbar .links li:hover .js-sub-menu{
+  display: block;
+}
+.navbar .links li .sub-menu li{
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.navbar .links li .sub-menu a{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+.navbar .links li .sub-menu .more-arrow{
+  line-height: 40px;
+}
+.navbar .links li .htmlCss-more-sub-menu{
+  /* line-height: 40px; */
+}
+.navbar .links li .sub-menu .more-sub-menu{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-radius: 0;
+  z-index: 1;
+  display: none;
+}
+.links li .sub-menu .more:hover .more-sub-menu{
+  display: block;
+}
+.navbar .search-box{
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+.navbar .search-box i{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar.showInput .search-box .input-box{
+  top: 65px;
+  opacity: 1;
+  pointer-events: auto;
+  background: white;
+}
+
+.navbar .nav-links .sidebar-logo{
+  display: none;
+}
+.navbar .bx-menu{
+  display: none;
+}
+@media (max-width:920px) {
+  nav .navbar{
+    max-width: 100%;
+    padding: 0 25px;
+}
+
+nav .navbar .logo {
+  padding: 10px;
+}
+nav .navbar .links li{
+    padding: 0 10px;
+    white-space: nowrap;
+}
+nav .navbar .links li a{
+    font-size: 15px;
+}
+}
+@media (max-width:800px){
+  nav{
+    /* position: relative; */
+}
+.navbar .bx-menu{
+    display: block;
+}
+nav .navbar .nav-links{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: block;
+    max-width: 270px;
+    width: 100%;
+    background:  white;
+    line-height: 40px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+.navbar .nav-links .sidebar-logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sidebar-logo .logo-name{
+    font-size: 25px;
+    color: #fff;
+}
+.sidebar-logo  i,
+.navbar .bx-menu{
+    font-size: 25px;
+    color: #fff;
+}
+nav .navbar .links{
+    display: block;
+    margin-top: 20px;
+}
+nav .navbar .links li .arrow{
+    line-height: 40px;
+}
+nav .navbar .links li{
+    display: block;
+}
+nav .navbar .links li .sub-menu{
+    position: relative;
+    top: 0;
+    box-shadow: none;
+    display: none;
+}
+nav .navbar .links li .sub-menu li{
+    border-bottom: none;
+
+}
+.navbar .links li .sub-menu .more-sub-menu{
+    display: none;
+    position: relative;
+    left: 0;
+}
+.navbar .links li .sub-menu .more-sub-menu li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+    transform: rotate(0deg);
+}
+.navbar .links li .sub-menu .more-sub-menu{
+    display: none;
+}
+.navbar .links li .sub-menu .more span{
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.links li .sub-menu .more:hover .more-sub-menu{
+    display: none;
+}
+nav .navbar .links li:hover .htmlCss-sub-menu,
+nav .navbar .links li:hover .js-sub-menu{
+    display: none;
+}
+.navbar .nav-links.show1 .links .htmlCss-sub-menu,
+.navbar .nav-links.show3 .links .js-sub-menu,
+.navbar .nav-links.show2 .links .more .more-sub-menu{
+    display: block;
+}
+.navbar .nav-links.show1 .links .htmlcss-arrow,
+.navbar .nav-links.show3 .links .js-arrow{
+    transform: rotate(180deg);
+}
+.navbar .nav-links.show2 .links .more-arrow{
+    transform: rotate(90deg);
+}
+}
+@media (max-width:370px){
+  nav .navbar .nav-links{
+    max-width: 100%;
+} 
+}
+/*Navbar ends*/
+
+/*Carousel starts*/
+.image-container {
+    background-image: url("/Users/yamasallah/Desktop/Johan & Nyström material/vill du ha.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 70px;
+}
+
+.image-container .content-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: Avenir Next, sans-serif;
+}
+
+.image-container h1 {
+    font-size: 60px;
+    width: 50%;
+    text-align: center;
+    text-shadow: #000000;
+    text-decoration: #04391f;
+}
+
+.image-container .content-section button,
+.read-more-btn {
+    background-color: rgb(17, 17, 17);
+    padding: 10px;
+    color: white;
+}
+
+/* Add media queries */
+@media (max-width: 768px) {
+    .image-container h1 {
+      font-size: 24px;
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+    .image-container {
+      padding: 10px;
+  }
+}
+
+/* blog-card  */
+.blog-card {
+    width: 300px;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 6px rgba(21, 21, 21, 0.1);
+    transition: transform 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.blog-card img {
+    width: 350px;
+    height: 100%;
+    display: block;
+}
+
+.blog-card-title {
+    color: white;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    font-size: 24px;
+    font-weight: bolder;
+
+}
+
+.blog-card:hover {
+    transform: scale(1.05);
+}
+
+.blog-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+.carousel-section {
+    position: relative;
+    width: 100vw;
+}
+
+.carousel-section {
+    position: relative;
+    width: 100vw;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.carousel input {
+    display: none;
+}
+
+.slides {
+    display: none;
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s;
+}
+
+.slide {
+    min-width: 100%;
+    flex: 1;
+    position: relative;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+
+    height: 450px;
+}
+
+.text-overlay {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 50px;
+}
+.text-overlay p
+{
+    font-weight: bolder;
+    color: #000000;
+}
+.text-overlay button
+{
+    cursor: pointer;
+    padding: 35px;
+    margin-top: 30px;
+    width: 100px;
+    background-color: white;
+    border: none;
+}
+.text-overlay .btn1:hover
+{
+    background-color: rgb(0, 0, 0) !important;
+}
+.text-overlay .btn2:hover
+{
+    background-color: whitesmoke !important;
+}
+.text-overlay .btn3:hover
+{
+    color: rgba(0, 0, 0, 0.7) !important;
+}
+.text-overlay h1
+{
+    font-size: 50px;
+}
+
+/* Styling for radio buttons */
+.carousel input[type="radio"] {
+    display: none;
+}
+
+.carousel input[type="radio"] + .slide {
+    display: none;
+}
+
+.carousel input[type="radio"]:checked + .slide {
+    display: block;
+}
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+/*Carousel Ends*/
+/*Product starts*/
+.card-wrapper{
+    max-width: 100%;
+    padding-bttom: 0 !important;
+}
+.card-wrapper img{
+    width: 100%;
+    display: block;
+
+}
+.img-display{
+    overflow: hidden;
+    width: 500px;
+    padding-top:20px !important;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+}
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+}
+.img-select img
+{
+    width: 100px;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+.product-content{
+    padding-left: 30px !important;
+    padding-top:30px !important;
+    max-width: 700px;
+}
+.product-title{
+    text-align: start;
+    font-size:60px;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #12263a;
+    margin: 1rem 0;
+}
+.product-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+.product-link:hover{
+    opacity: 0.9;
+}
+.product-rating{
+    color: #ffc107;
+}
+.product-rating span{
+    font-weight: 600;
+    color: #252525;
+}
+.product-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.product-price span{
+    font-weight: 400;
+}
+.last-price span{
+    color: #f64749;
+    text-decoration: line-through;
+}
+.new-price span{
+    color: #256eff;
+}
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.product-detail p{
+    padding-top: 25px;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    opacity: 0.8;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+.purchase-info{
+    margin-top: 45px;
+    width: 100%;
+}
+.purchase-info .btn{
+    padding: 15px !important;
+    width: 60%;
+    background-color: #fff;
+    color: green;
+    border: 2px solid green;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+.purchase-info input{
+    width: 60px;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+}
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+.social-links a:hover{
+    background: #000;
+    border-color: transparent;
+    color: #fff;
+}
+
+@media screen and (min-width: 992px){
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 0 !important;
+    }
+    .card-wrapper{
+        display: flex;
+    }
+    .product-imgs{
+        padding-left: 10px;
+        max-width: 500px;
+        max-height: 530px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
+}
+/*Product Ends*/
+.black-btn
+{
+    width: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+.black-btn button
+{
+    padding: 10px ;
+    margin-top: 5px;
+    background-color: black;
+    color: #fff;
+    width: 100%;
+}
+.qty
+{
+    display: flex;
+    gap: 0;
+    background-color: #fff;
+    border: 1px solid black;
+    width: 100px;
+    padding: 3px;
+}
+.qty input
+{
+    width: 50px;
+    text-align: center;
+    outline: none;
+    border: none;
+    padding: 2px;
+}
+.qty button
+{
+    width: 20px;
+
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: #fff;
+    border: none;
+}
+/* Header-stil */
+.main-header {
+    background-color: #00843d;
+    text-align: center;
+    padding: 17px;
+    font-size: small;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-header {
+    background-color: rgb(255, 255, 255);
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Avenir Next";
+}
+
+/* Bild i menyn */
+.menu-image img {
+    height: 50%;
+    width: 100%;
+}
+
+.menu-list li a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Övriga stilregler för header */
+.main-header h4 {
+    color: white;
+}
+
+/* Huvudsektionens stil */
+main {
+    margin-top: 0;
+    
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 17px;
+    font-family: Avenir Next, sans-serif;
+    color: #333;
+    text-align: right;
+}
+
+/* Rubrikstil */
+h2 {
+    font-size: 28px;
+    color: #000000;
+    text-align: center; /* Centrerad text */
+}
+
+h3 {
+    font-size: 18px;
+    color: #625e5e;
+    text-align: center; /* Centrerad text */
+    padding-bottom: 15;
+}
+
+/* Paragrafstil */
+p1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: rgb(76, 82, 82);
+}
+
+/* Paragrafstil */
+p2 {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+}
+
+/* Formulärstil */
+form {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(19, 19, 19, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #113b0f;
+    border-radius: 0px;
+}
+
+button[type="submit"] {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+/* Knappstil för "Köp kaffeprenumeration" */
+#buy-subscription-button {
+    background-color: #000000;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+/* Footer-stil */
+footer {
+    background-color: #00843d;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Stil för länkar i footern */
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Menystil */
+.menu-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 60px;
+    align-items: center;
+}
+
+.menu-list li {
+    margin: 0;
+}
+
+.menu-list li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+/* Stil för bilden under "main" */
+main img {
+    height: auto;
+    width: 100%;
+    margin-left: 0%;
+}
+
+/* Stil för texten "Vill du ge bort en kaffeprenumeration i present?" */
+#gift-subscription {
+    margin-top: 20px;
+    font-size: 34px;
+    font-family: Avenir Next, sans-serif;
+}
